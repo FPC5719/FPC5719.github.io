@@ -1,11 +1,14 @@
 $(document).ready(function(){
+	$("#p_left_11").hide();
+	$("#p_left_21").hide();
+	$("#p_left_31").hide();
 	$("#p_left_1").click(function(){
-		$("#p_left_11").Toggle("slow");
+		$("#p_left_11").slideToggle("slow");
 	});
 	$("#p_left_2").click(function(){
-		$("#p_left_21").Toggle("slow");
+		$("#p_left_21").slideToggle("slow");
 	});
 	$("#p_left_3").click(function(){
-		$("#p_left_31").Toggle("slow");
+		$("#p_left_31").slideToggle("slow");
 	});
 });

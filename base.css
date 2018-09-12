@@ -40,10 +40,13 @@ img.img_left{
 	width:70;
 }
 a:link{
-	color:#FFFFFF;
+	color:#EEEEEE;
+}
+a:hover{
+	color:#AAAAAA;
 }
 a:visited{
-	color:#FFFFFF;
+	color:#EEEEEE;
 }
 p.p_left{
 	position:relative;
