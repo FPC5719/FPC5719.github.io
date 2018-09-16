@@ -16,13 +16,13 @@ div.div_left{
 	left:0;
 	top:50;
 	background:#24292e;
-	width:70;
+	width:100;
 	height:100%;
 }
 div.div_center{
 	position:absolute;
 	top:60px;
-	left:15%;
+	left:20%;
 	width:80%;
 	height:80%;
 }
@@ -52,4 +52,8 @@ p.p_left{
 	position:relative;
 	left:10px;
 	color:#FFFFFF;
+}
+div.div_left_tags{
+	position:relative;
+	left:20%;
 }
