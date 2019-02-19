@@ -1,1 +1,45 @@
-theme: jekyll-theme-hacker
+title: FPC5719的博客
+url: "http://fpc5719.github.io"
+baseurl: ""
+description: >
+  一个蒟蒻的博客。仅此而已。
+
+email: FPC5719@163.com
+author: FPC5719
+avatar: "https://avatars3.githubusercontent.com/u/42735573?s=400&v=4"
+
+profile: ZJOI大蒟蒻。
+profile_links:
+  洛谷: "https://www.luogu.org/blog/hello-world/#"
+  Github: "https://github.com/FPC5719"
+
+excerpt_separator: <!--more-->
+
+header:
+  links:
+    关于: /about/
+
+plugins:
+ - jekyll-paginate
+ - jekyll-gist
+ - jemoji
+
+plugins: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
+
+highlighter: rouge
+markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
