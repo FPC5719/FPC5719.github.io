@@ -2,15 +2,16 @@ title: FPC5719的博客
 url: "http://fpc5719.github.io"
 baseurl: ""
 description: >
-  一个蒟蒻的博客。仅此而已。
+  一个即将（也许是已经）退役的OIer的博客。
+  主要是OI相关（但是目前好像全都是杂七杂八的东西？）
 
 email: FPC5719@163.com
 author: FPC5719
 avatar: "https://avatars3.githubusercontent.com/u/42735573?s=400&v=4"
 
-profile: ZJ众OIER中最蒻的一个没有之一。
+profile: 我太蒻了
 profile_links:
-  洛谷: "https://www.luogu.org/blog/hello-world/#"
+  洛谷: "https://www.luogu.com.cn/blog/hello-world/#"
   Github: "https://github.com/FPC5719"
 
 excerpt_separator: <!--more-->
