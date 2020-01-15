@@ -14,7 +14,9 @@ body {
 
 .header {
 	line-height: $base-font-size * 2;
-	background-color: $header-bg;
+	background-color: #4531be;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
 	padding: 10px;
 	margin: 0;
 	
@@ -84,6 +86,8 @@ $hide-sidebar-screen-width: 1120px;
 
 .page-content {
 	padding: 30px 0;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
 
 	.wrapper {
 		position: relative;
