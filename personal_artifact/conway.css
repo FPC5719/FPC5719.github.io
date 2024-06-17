@@ -1,0 +1,43 @@
+.panel {
+    display: none;
+}
+.select {
+    text-decoration: underline;
+}
+.select:hover {
+    color: #777777;
+}
+.jkdimg {
+    transform: scale(0.8);
+    transform-origin: top left;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.conway-holder {
+    display: flex;
+}
+.conway-canvas {
+    flex: auto;
+}
+.conway-control {
+    height: 100%;
+    width: 120px;
+    flex: auto;
+}
+.conway-button {
+    width: 70%;
+    height: 30px;
+    text-align: center;
+    border: solid 2px;
+    margin: 5px;
+    padding: 5px;
+}
+.conway-button:hover {
+    background-color: #BBBBBB;
+}
+.conway-button-text {
+    vertical-align: middle;
+}

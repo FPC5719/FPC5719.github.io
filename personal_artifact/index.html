@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="conway.js"></script>
+    <script src="res.js"></script>
+    <link rel="stylesheet" type="text/css" href="conway.css">
+  </head>
+
+  <body>
+    <div class="content">
+      <h1>在康威生命游戏中显示“计科导”</h1>
+      <div>
+	<a class="select" onclick="switchPanel('panel1');">演示</a>
+	<a class="select" onclick="switchPanel('panel2');">原理简介</a>
+	<a class="select" onclick="switchPanel('panel3');">致谢</a>
+      </div>
+      
+      <div id="panel1" class="panel">
+	<div id="jkd"></div>
+      </div>
+
+      <div id="panel2" class="panel">
+	<h1>原理简介</h1>
+	<p>康威生命游戏是英国数学家约翰·何顿·康威在1970年发明的元胞自动机。其模拟一个二维正方形网格，每个单元格代表一个或生或死的细胞。具体规则如下：</p>
+	<ol>
+	  <li>当前细胞存活时，若周围存活细胞小于2个，该细胞死亡。</li>
+	  <li>当前细胞存活时，若周围有2个或3个活细胞，该细胞保持存活。</li>
+	  <li>当前细胞存活时，若周围活细胞大于3个，该细胞死亡。</li>
+	  <li>当前细胞死亡时，若周围恰好有3个活细胞，该细胞变为存活。</li>
+	</ol>
+	<p>基于以上原理，我们便可以在康威生命游戏中构造出多种多样的结构，其中，较为有序的结构可分为以下三类：稳定结构、震荡结构、飞船结构。</p>
+	<p>稳定结构是不会随着迭代而变化的结构，例如：</p>
+	<div id="stable"></div>
+	<p>震荡结构具有一定的周期性，且在迭代一个周期后回到最开始的结构。以下是一些震荡结构：左侧的三个结构周期均为2，右侧的结构（通常被称为“脉冲星”）周期为3。</p>
+	<div id="oscillator"></div>
+	<p>飞船结构也具有周期性，但不同的是在一个周期过后它会向一个特定方向平移一段距离。最简单的飞船结构被称为“滑翔机”，如左侧上方所示，周期为4，沿对角线方向平移。另一种被称为“轻型飞船”，如左侧下方所示，周期也为4，水平或竖直平移。值得一提的是，右侧的两个结构被称为“吞噬者”，可以吸收许多不同的结构，并最终恢复初始状态。</p>
+	<div id="spaceship"></div>
+	<p>根据以上讨论，我们可以分析“计科导显示器”的结构了。如图所示，整个显示器可分为三个部分：</p>
+	<img class="jkdimg" src="jkd-structure.png"></img>
+	<p>在编码部分中，我们采取“滑翔机”作为存储编码数据的介质，同时在两端设置换向结构使其可以呈环形连续运动。在这个部分我们储存了“计科导”这三个字在每一个像素位置上的具体信息。</p>
+	<p>显示部分负责具体的显示内容。可以发现，每一个具体的像素都是一架我们刚才提到的“轻型飞船”。在显示部分与编码部分结合的区域我们设置了相应的转换结构：如果接收到一架“滑翔机”，就产生一架“轻型飞船”，并重新产生一架“滑翔机”使得环形存储结构可以持续运行。</p>
+	<p>最后，吸收部分在与“轻型飞船”接触时可以将它完全吸收，并最终回到原来的稳定状态。</p>
+      </div>
+
+      <div id="panel3" class="panel">
+	<h1>致谢</h1>
+	<ul>
+	  <li><a href="https://conwaylife.com/wiki/">LifeWiki - the wiki for Conway's Game of Life</a></li>
+	  <li><a href="https://golly.sourceforge.io/webapp/golly.html">Golly - Cellular Automata Simulator</a></li>
+	  <li><a href="https://developer.mozilla.org/zh-CN/">MDN Web Docs</li>
+	</ul>
+      </div>
+    </div>
+
+    <script>
+      init();
+      let frameJKD = new Conway("jkd", 1, 0.8, res["jkd"]);
+      let frameStable = new Conway("stable", 20, 1, res["stable"]);
+      let frameOscillator = new Conway("oscillator", 20, 1, res["oscillator"]);
+      let frameSpaceship = new Conway("spaceship", 20, 1, res["spaceship"]);
+      panels.push("panel1");
+      panels.push("panel2");
+      panels.push("panel3");
+      switchPanel("panel1");
+    </script>
+  </body>
+</html>
